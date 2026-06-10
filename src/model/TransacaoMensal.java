@@ -18,6 +18,6 @@ public class TransacaoMensal extends Transacao {
 
     @Override
     public String toString() {
-        return "\nMês: " + mes;
+        return super.toString() + "\nMes: " + mes;
     }
 }

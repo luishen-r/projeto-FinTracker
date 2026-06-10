@@ -39,6 +39,6 @@ public class Transacao {
     public String toString() {
         return "Tipo: " + tipo +
                 "\nDescricao: " + descricao +
-                "\nValor: R$" + valor;
+                "\nValor: R$" + util.Formatador.formatarMoeda(valor);
     }
 }
