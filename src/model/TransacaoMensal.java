@@ -1,0 +1,23 @@
+package model;
+
+public class TransacaoMensal extends Transacao {
+    private int mes;
+
+    public TransacaoMensal(int mes, String descricao, double valor, String tipo) {
+        super(descricao, valor, tipo);
+        this.mes = mes;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    @Override
+    public String toString() {
+        return "\nMês: " + mes;
+    }
+}
