@@ -11,8 +11,8 @@ public class FinTracker {
     }
 
     public void listarTransacoes() {
-        for (Transacao transacao : transacoes) {
-            System.out.println(transacao);
+        for (int i = 0; i < transacoes.size(); i++) {
+            System.out.println(i + ". " + transacoes.get(i));
         }
     }
 
