@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import controller.FinTracker;
 import model.Transacao;
 import exceptions.EntradaInvalidaException;
+import model.TransacaoMensal;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,6 +44,22 @@ public class Main {
 
                         if (!tipo.equalsIgnoreCase("receita") && !tipo.equalsIgnoreCase("despesa")) {
                             throw new EntradaInvalidaException("Tipo inválido! Digite 'Receita' ou 'Despesa'.");
+                        }
+
+                        System.out.println("Recorrência: [S/N]: ");
+                        String recorrencia = input.nextLine();
+
+                        if (recorrencia.equalsIgnoreCase("S")) {
+                            System.out.println("Informe o mês: ");
+                            int mes = input.nextInt();
+                            input.nextLine();
+
+                            TransacaoMensal transacaoMensal = new TransacaoMensal(mes, desc, valor, tipo);
+                            finTracker.addTransacao(transacaoMensal);
+
+                            System.out.println("Transação adicionada com sucesso!");
+
+                            break;
                         }
 
                         Transacao transacao = new Transacao(desc, valor, tipo);

@@ -4,7 +4,7 @@ import model.Transacao;
 import java.util.ArrayList;
 
 public class FinTracker {
-    private ArrayList<Transacao> transacoes = new ArrayList<>();
+    private final ArrayList<Transacao> transacoes = new ArrayList<>();
 
     public void addTransacao(Transacao transacao) {
         transacoes.add(transacao);
@@ -12,7 +12,7 @@ public class FinTracker {
 
     public void listarTransacoes() {
         for (int i = 0; i < transacoes.size(); i++) {
-            System.out.println(i + ". " + transacoes.get(i));
+            System.out.println(i+1 + ". " + transacoes.get(i));
         }
     }
 
